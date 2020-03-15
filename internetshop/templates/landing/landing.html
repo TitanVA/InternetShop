@@ -1,54 +1,53 @@
-<!DOCTYPE html>
 {% load static %}
-<html lang="en" xmlns:https="http://www.w3.org/1999/xhtml">
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto:100,100i,300,300i,400&display=swap" rel="stylesheet">
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
 
-    <style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400" rel="stylesheet">
 
-    </style>
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+
 
 </head>
 <body>
 
     <div class="general-container">
         <div class="container top-container">
-            <div class="row justify-content-md-center">
-                <div class="text-center">
-                    <h1 class="title">Наш магазин скоро откроется! <br>
-                        Оставляйте Ваш имейл в форму ниже</h1>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h1 class="title">Наш магазин скоро откроется!<br>
+                    Оставляйте Ваш имейл в форме ниже</h1>
                     <div>
-                        <form action="" method="post" class="form-inline text-center">
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <label>Ваше имя: </label>
-                                <input name="{{ form.name.name }}" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Ваше email: </label>
-                                <input email="{{ form.email.name }}" class="form-control">
-                            </div>
-                            <div>
-                                <button type="submit" class="btn btn-primary btn-orange">
-                                    Отправить
-                                </button>
-                            </div>
+                        <form action="" method="post" class="form-inline text-center">{% csrf_token %}
+                         <div class="form-group">
+                             <label>Ваш имейл: </label>
+                             <input name="{{ form.email.name }}" class="form-control">
+                         </div>
+                         <div class="form-group">
+                             <label>Ваше имя: </label>
+                             <input name="{{ form.name.name }}" class="form-control">
+                         </div>
+                         <button type="submit" class="btn btn-primary btn-orange">Отправить</button>
                         </form>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 </html>

@@ -1,19 +1,23 @@
 from django.contrib import admin
-from . import models
+from .models import *
 
 
-class SubscriberAdmin(admin.ModelAdmin):
+class SubscriberAdmin (admin.ModelAdmin):
     # list_display = ["name", "email"]
-    list_display = [field.name for field in models.Subscriber._meta.fields]
-    search_fields = ["name", "email"]
-    # list_filter = ('email',)
+    list_display = [field.name for field in Subscriber._meta.fields]
+    list_filter = ['name',]
+    search_fields = ['name', 'email']
+
+    fields = ["email"]
+
     # exclude = ["email"]
-    # inlines = [FieldMappingInLine]
-    # fields = ["email"]
-    # search_fields = ['category', 'subCategory', 'suggestKeyword']
+	# inlines = [FieldMappingInline]
+	# fields = []
+    # #exclude = ["type"]
+	# #list_filter = ('report_data',)
+	# search_fields = ['category', 'subCategory', 'suggestKeyword']
 
     class Meta:
-        model = models.Subscriber
+        model = Subscriber
 
-
-admin.site.register(models.Subscriber, SubscriberAdmin)
+admin.site.register(Subscriber, SubscriberAdmin)

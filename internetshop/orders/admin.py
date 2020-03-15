@@ -1,38 +1,35 @@
 from django.contrib import admin
-from . import models
+from .models import *
 
 
 class ProductInOrderInline(admin.TabularInline):
-    model = models.ProductInOrder
+    model = ProductInOrder
     extra = 0
 
 
-class StatusAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in models.Status._meta.fields]
+class StatusAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in Status._meta.fields]
 
     class Meta:
-        model = models.Status
+        model = Status
+
+admin.site.register(Status, StatusAdmin)
 
 
-admin.site.register(models.Status, StatusAdmin)
-
-
-class OrderAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in models.Order._meta.fields]
+class OrderAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in Order._meta.fields]
     inlines = [ProductInOrderInline]
 
     class Meta:
-        model = models.Order
+        model = Order
+
+admin.site.register(Order, OrderAdmin)
 
 
-admin.site.register(models.Order, OrderAdmin)
-
-
-class ProductInOrderAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in models.ProductInOrder._meta.fields]
+class ProductInOrderAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in ProductInOrder._meta.fields]
 
     class Meta:
-        model = models.ProductInOrder
+        model = ProductInOrder
 
-
-admin.site.register(models.ProductInOrder, ProductInOrderAdmin)
+admin.site.register(ProductInOrder, ProductInOrderAdmin)

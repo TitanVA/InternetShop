@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'landing',
+    'products',
+    'orders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -123,3 +125,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     '/internetshop/static/',
 ]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')

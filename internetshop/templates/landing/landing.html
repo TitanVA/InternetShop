@@ -7,29 +7,44 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto:100,100i,300,300i,400&display=swap" rel="stylesheet">
+
+    <style>
+
+    </style>
+
 </head>
 <body>
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col-6 col-md-4">
-                    <h2 class="title">Наш магазин скоро откроется</h2>
-                    <h2 class="title">Оставляйте Ваш имейл в форму ниже</h2>
-                <div>
-                    <form action="" method="post">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <div>
-                            <button type="submit" class="btn btn-primary">
-                                Отправить
-                            </button>
-                        </div>
-                    </form>
 
+    <div class="general-container">
+        <div class="container top-container">
+            <div class="row justify-content-md-center">
+                <div class="text-center">
+                    <h1 class="title">Наш магазин скоро откроется! <br>
+                        Оставляйте Ваш имейл в форму ниже</h1>
+                    <div>
+                        <form action="" method="post" class="form-inline text-center">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label>Ваше имя: </label>
+                                <input name="{{ form.name.name }}" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Ваше email: </label>
+                                <input email="{{ form.email.name }}" class="form-control">
+                            </div>
+                            <div">
+                                <button type="submit" class="btn btn-primary btn-orange">
+                                    Отправить
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <p>Today is: {{ now }}</p>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

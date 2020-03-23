@@ -7,4 +7,3 @@ class SubscriberForm(forms.ModelForm):
     class Meta:
         model = Subscriber
         exclude = [""]
-

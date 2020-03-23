@@ -1,3 +1,4 @@
+
 from django import forms
 from .models import *
 
@@ -7,4 +8,3 @@ from .models import *
 #     class Meta:
 #         model = Subscriber
 #         exclude = [""]
-
